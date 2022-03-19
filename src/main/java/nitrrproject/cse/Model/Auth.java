@@ -1,6 +1,5 @@
 package nitrrproject.cse.Model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,10 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "staff")
+@Table(name = "Auth")
 
-public class Staff {
-
+public class Auth {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,24 +28,15 @@ public class Staff {
     @Column(name = "password")
 	private String password;
 
-	@Column(name = "status")
-	private long status;
+  public Auth(){
 
-	@Column(name = "salary")
-	private long salary;
+  }
 
-	public Staff(){
-
-	}
-
-	public Staff(String firstName, String lastName, String emailId, String password, long status, long salary) {
-        super();
+	public Auth(String firstName, String lastName, String emailId) {
+		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
-        this.password = password;
-		this.status = status;
-		this.salary = salary;
 	}
 	public long getId() {
 		return id;
@@ -73,22 +62,11 @@ public class Staff {
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
+
     public String getPassword(){
         return password;
     }
     public void setPassword(String password){
         this.password = password;
     }
-	public long getStatus() {
-		return status;
-	}
-	public void setStatus(long status) {
-		this.status = status;
-	}
-	public long getSalary() {
-		return salary;
-	}
-	public void setSalary(long salary) {
-		this.salary = salary;
-	}
 }
