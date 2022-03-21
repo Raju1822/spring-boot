@@ -36,11 +36,21 @@ public class Staff {
 	@Column(name = "salary")
 	private long salary;
 
+	@Column(name = "mobile")
+	private long mobile;
+
+	@Column(name = "gender")
+	private String gender;
+
+	@Column(name = "doj")
+	private String doj;
+
+
 	public Staff(){
 
 	}
 
-	public Staff(String firstName, String lastName, String emailId, String password, long status, long salary) {
+	public Staff(String firstName, String lastName, String emailId, String password, long status, long salary,long mobile, String gender, String doj) {
         super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -48,6 +58,9 @@ public class Staff {
         this.password = password;
 		this.status = status;
 		this.salary = salary;
+		this.gender = gender;
+		this.mobile = mobile;
+		this.doj = doj;
 	}
 	public long getId() {
 		return id;
@@ -91,4 +104,27 @@ public class Staff {
 	public void setSalary(long salary) {
 		this.salary = salary;
 	}
+
+	public long getMobile() {
+		return mobile;
+	}
+	public void setMobile(long mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getDoj() {
+		return doj;
+	}
+	public void setDoj(String doj) {
+		this.doj = doj;
+	}
+
+
 }
