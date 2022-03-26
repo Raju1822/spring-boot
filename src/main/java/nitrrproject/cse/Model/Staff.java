@@ -45,12 +45,17 @@ public class Staff {
 	@Column(name = "doj")
 	private String doj;
 
+	@Column(name = "reason")
+	private String reason;
+
+	@Column(name = "address")
+	private String address;
 
 	public Staff(){
 
 	}
 
-	public Staff(String firstName, String lastName, String emailId, String password, long status, long salary,long mobile, String gender, String doj) {
+	public Staff(String firstName, String lastName, String emailId, String password, long status, long salary,long mobile, String gender, String doj, String reason, String address) {
         super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -61,6 +66,8 @@ public class Staff {
 		this.gender = gender;
 		this.mobile = mobile;
 		this.doj = doj;
+		this.reason = reason;
+		this.address = address;
 	}
 	public long getId() {
 		return id;
@@ -124,6 +131,22 @@ public class Staff {
 	}
 	public void setDoj(String doj) {
 		this.doj = doj;
+	}
+
+	public String getReason(){
+		return reason;
+	}
+
+	public void setReason(String reason){
+		this.reason = reason;
+	}
+
+	public String getAddress(){
+		return address;
+	}
+
+	public void setAddress(String address){
+		this.address = address;
 	}
 
 

@@ -62,10 +62,40 @@ public class StaffController {
 		staff.setFirstName(StaffDetails.getFirstName());
 		staff.setLastName(StaffDetails.getLastName());
 		staff.setEmailId(StaffDetails.getEmailId());
+		// staff.setReason(StaffDetails.getReason());
 
 		Staff updatedStaff = staffRepository.save(staff);
 		return ResponseEntity.ok(updatedStaff);
 	}
+
+
+// update reason in staff table
+	@PutMapping("/staff/reason/{id}")
+	public ResponseEntity<Staff> updateStaffReason(@PathVariable Long id, @RequestBody Staff StaffDetails){
+		Staff staff = staffRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Staff not exist with id :" + id));
+
+		staff.setReason(StaffDetails.getReason());
+		staff.setStatus(StaffDetails.getStatus());
+
+		Staff updatedStaff = staffRepository.save(staff);
+		return ResponseEntity.ok(updatedStaff);
+	}
+
+	// update status of employee tabale for appraisal form
+	@PutMapping("/staff/status/{id}")
+	public ResponseEntity<Staff> updateStaffStatus(@PathVariable Long id, @RequestBody Staff StaffDetails){
+		Staff staff = staffRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Staff not exist with id :" + id));
+
+		staff.setReason(StaffDetails.getReason());
+		staff.setStatus(StaffDetails.getStatus());
+
+		Staff updatedStaff = staffRepository.save(staff);
+		return ResponseEntity.ok(updatedStaff);
+	}
+
+
 
 	// delete Staff rest api
 	@DeleteMapping("/staff/{id}")
