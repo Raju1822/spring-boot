@@ -62,6 +62,9 @@ public class StaffController {
 		staff.setFirstName(StaffDetails.getFirstName());
 		staff.setLastName(StaffDetails.getLastName());
 		staff.setEmailId(StaffDetails.getEmailId());
+		staff.setMobile(StaffDetails.getMobile());
+		staff.setAddress(StaffDetails.getAddress());
+
 		// staff.setReason(StaffDetails.getReason());
 
 		Staff updatedStaff = staffRepository.save(staff);
