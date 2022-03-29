@@ -95,6 +95,19 @@ public class StaffController {
 		return ResponseEntity.ok(updatedStaff);
 	}
 
+	// update salary of emloyee
+
+	@PutMapping("/staff/salary/{id}")
+	public ResponseEntity<Staff> updateStaffSalary(@PathVariable Long id, @RequestBody Staff StaffDetails){
+		Staff staff = staffRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Staff not exist with id :" + id));
+
+		staff.setSalary(StaffDetails.getSalary());
+
+		Staff updatedStaff = staffRepository.save(staff);
+		return ResponseEntity.ok(updatedStaff);
+	}
+
 
 
 	// delete Staff rest api
