@@ -66,7 +66,7 @@ public class AdminController {
 		return ResponseEntity.ok(updatedEmployee);
 	}
 
-	// delete employee rest api
+	// delete employee rest api raju
 	@DeleteMapping("/admin/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable Long id){
 		Admin employee = adminRepository.findById(id)
